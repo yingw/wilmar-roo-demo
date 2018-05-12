@@ -1,0 +1,47 @@
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-08-01 22:52:47
+project setup --topLevelPackage cn.wilmar.roo --projectName "Wilmar Roo" --java 8 --packaging JAR
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log closed at 2017-08-01 22:52:48
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-08-01 22:52:52
+hint 
+jpa setup --provider HIBERNATE --database H2_IN_MEMORY 
+hint
+entity jpa --class ~.domain.Employee
+field string --fieldName username --sizeMax 50 --sizeMin 1
+field string --fieldName password --sizeMax 50 --sizeMin 1
+field date --fieldName birthday --type java.util.Date
+field boolean --fieldName active
+repository jpa --all 
+service --all 
+web mvc setup 
+web mvc view setup --type THYMELEAF 
+web mvc controller --all --responseType THYMELEAF
+web mvc controller --all --pathPrefix /api --responseType JSON 
+web mvc templates setup --type THYMELEAF 
+entity jpa --class ~.domain.Department
+// [failed] field string --fieldName name --sizeMax 50 --sizeMin 3
+hint
+hint topice
+hint topics
+hint entities
+focus --class ~.domain.Employee 
+field reference --fieldName department --type ~.domain.Department 
+web mvc controller --all 
+repository jpa --all 
+service --all 
+web mvc controller --all --responseType THYMELEAF 
+web mvc controller --all --pathPrefix /api --responseType JSON 
+web mvc templates setup --type THYMELEAF 
+focus --class ~.domain.Department
+field string --fieldName name
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log closed at 2017-08-02 00:01:49
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-08-02 02:04:27
+push-in --all 
+// [failed] push-in --all --force 
+push-in --class ~.web.DepartmentJsonMixin
+push-in --class ~.domain.Employee
+pu
+push-in --class ~.service.api.EmployeeService
+push-in --class ~.service.api.EmployeeService --force 
+push-in --class ~.service.api.DepartmentService --method findAll() 
+push-in --class ~.service.impl.EmployeeServiceImpl --force 
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log closed at 2017-08-04 10:06:47

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+    <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_employee})}|">Show Employee - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-th-fragment="inline-content" data-layout-fragment="content" data-th-object="${employee}">
+        <div>
+
+          <!-- CONTENT -->
+            <div id="mainEntityFieldSet">
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="employee-username-field" data-z="285eec79">
+            	      <strong data-th-text="#{label_employee_username}">username</strong>
+                    <span data-th-text="*{{username}}">usernameValue</span>
+         	        </li>
+                  <li id="employee-password-field" data-z="9d1fc7d9">
+            	      <strong data-th-text="#{label_employee_password}">password</strong>
+                    <span data-th-text="*{{password}}">passwordValue</span>
+         	        </li>
+                  <li id="employee-birthday-field" data-z="854a5399">
+            	      <strong data-th-text="#{label_employee_birthday}">birthday</strong>
+                    <span data-th-text="*{{birthday}}">birthdayValue</span>
+         	        </li>
+                  <li id="employee-active-field" data-z="5f1dd4f9">
+            	      <strong data-th-text="#{label_employee_active}">active</strong>
+                    <span data-th-text="*{{active}}">activeValue</span>
+         	        </li>
+                  <li id="employee-department-field" data-z="448e3e79">
+            	      <strong data-th-text="#{label_employee_department}">department</strong>
+                    <span data-th-text="*{{department}}">departmentValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>
